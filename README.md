@@ -16,7 +16,7 @@ To use, add this code base into your project and your settings file, then:
 
 ```` python
 manage.py migrate path.to.poc
-`
+````
 
 Run your project:
 
