@@ -1,0 +1,10 @@
+{% load sekizai_tags staticfiles thumbnail %}
+<div class="widget plugin person-list">
+  <div class="inner">
+    <ul class="person_list">{% for person in person_list %}
+      <li class="person">
+        {% include "poc/_person.html" %}
+      </li>{% endfor %}
+    </ul>
+  </div>
+</div>

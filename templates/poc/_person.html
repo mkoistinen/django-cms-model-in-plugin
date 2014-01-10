@@ -1,0 +1,6 @@
+{% load cms_tags thumbnail staticfiles %}
+    <div class="content">
+        <h2>{% show_editable_model person "name" %}</h2>
+        <p class="title">{{ person.title }}</p>
+        <div class="bio">{% render_placeholder person.bio %}</div>
+    </div>
