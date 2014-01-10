@@ -4,8 +4,8 @@
 
 This is a simple proof-of-concept of using editable models inside a CMS-Plugin in django-cms version 3.0.0.beta3 and, in particular, to aide in the resolution of issues:
 
-1. https://github.com/divio/django-cms/issues/2432
-1. https://github.com/divio/django-cms/issues/2433
+* https://github.com/divio/django-cms/issues/2432
+* https://github.com/divio/django-cms/issues/2433
 
 To work-around the issue #2432 (above), please apply the manual patch as outlined at the above issue url.
 
@@ -14,11 +14,15 @@ To work-around the issue #2432 (above), please apply the manual patch as outline
 
 To use, add this code base into your project and your settings file, then:
 
-> manage.py migrate path.to.poc
+```` python
+manage.py migrate path.to.poc
+`
 
 Run your project:
 
-> manage.py runserver
+```` python
+manage.py runserver
+````
 
 
 ## Using the Software.
@@ -40,14 +44,11 @@ When you go into Content Mode or into Live Mode, you should see a list of the pe
 
 ### 3. Modify the Person model
 
-The code used above already includes a work-around for Issue #2433.  This work-around is insufficient because it dictates a specific plugin to be used in the PlaceholderField on the Person model.  In this case, we prepoplate the PHF with a Text Plugin, which is appropriate for a Bio, but in other applications, it would be more appropriate if the user could place any plugin they desire into the PHF.
+The code used above already includes a work-around for Issue #2433.  This work-around is insufficient because it dictates a specific plugin to be used in the PlaceholderField on the Person model.  In this case, we prepopulate the PHF with a Text Plugin, which is appropriate for a Bio, but in other applications, it would be more appropriate if the user could place any plugin they desire into the PHF.
 
 1. Go to the Person model and comment out or delete the save() method.
-
 1. Restart the server (it should do this automatically, of course)
-
 1. Add a new Person record.
-
 1. Go back to the page where you added the CMS Plugin.
 
 Note that you should see the new person in your list. However, there will be no bio field displayed.  If you then go into content mode - where you would normally initially populate a PlaceholderField - there is nothing there you can use to create the biography.
